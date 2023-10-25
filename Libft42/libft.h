@@ -16,7 +16,6 @@
 # include <unistd.h> //write
 # include <stdio.h> //size_t
 # include <stdlib.h> //malloc/free
-# include <string.h>
 
 typedef struct s_list
 {
