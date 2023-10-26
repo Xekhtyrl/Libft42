@@ -24,16 +24,13 @@ char	*ft_itoa(int n)
 	char	*str;
 	long	nb;
 	int		l;
-	int		m;
 
-	m = 0;
 	nb = n;
 	if (nb < 0)
-	{
 		nb *= -1;
-		m = 1;
-	}
-	l = ft_int_size(nb) + m;
+	l = ft_int_size(nb);
+	if (n < 0)
+		l++;
 	str = malloc(sizeof(char) * (l + 1));
 	if (!str)
 		return (0);
@@ -43,7 +40,7 @@ char	*ft_itoa(int n)
 		str[l] = ((nb % 10) + '0');
 		nb = nb / 10;
 	}
-	if (m == 1)
+	if (n < 0)
 		str[0] = '-';
 	return (str);
 }
